@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example for qs-excel</title>
+	<script src="https://code.angularjs.org/1.5.3/angular.min.js"></script>
+	<script src="http://cdn.jsdelivr.net/alasql/0.2/alasql.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.full.min.js"></script>
+	<script src="qs-excel-export.js"></script>
+	<script src="app.js"></script>
+
+</head>
+<body ng-app="qsExcel">
+	<div ng-controller="excelController">
+	    <button excel-directive="items1">Export</button>
+	    <button excel-directive="items2">Export</button>
+	    <br />
+	    <div id="exportable">
+	    <table width="100%">
+	        <thead>
+	            <tr>
+	                <th>Name</th>
+	                <th>Email</th>
+	                <th>DoB</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <tr ng-repeat="item in items1">
+	                <td>{{item.name}}</td>
+	                <td>{{item.email}}</td>
+	                <td>{{item.dob | date:'MM/dd/yy'}}</td>
+	            </tr>
+	        </tbody>
+	    </table>
+	    </div>
+	</div>
+</body>
+</html>
